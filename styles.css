@@ -1,0 +1,762 @@
+
+/* ==========================================
+   1. CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F5F0E6;
+    color: #355C45;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ==========================================
+   2. VARIABLES DE COLOR
+========================================== */
+
+:root {
+    --verde: #355C45;
+    --verde-oscuro: #253D2E;
+    --verde-claro: #A8B99A;
+    --beige: #F5F0E6;
+    --blanco: #FFFFFF;
+    --gris: #777777;
+}
+
+
+/* ==========================================
+   3. NAVEGACIÓN
+========================================== */
+
+.header {
+    width: 100%;
+    background-color: var(--blanco);
+    padding: 18px 8%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+}
+
+.navbar {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--verde);
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--verde-oscuro);
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #8A9F78;
+}
+
+.nav-button {
+    background-color: var(--verde);
+    color: white;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-button:hover {
+    background-color: var(--verde-oscuro);
+}
+
+
+/* ==========================================
+   4. PORTADA PRINCIPAL
+========================================== */
+
+.hero {
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+
+    background-image: url(
+        "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1800"
+    );
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(20,45,30,0.85),
+        rgba(20,45,30,0.35)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    color: white;
+}
+
+.hero-label {
+    display: inline-block;
+    color: #D5E3C9;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #F2F2F2;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+/* ==========================================
+   5. BOTONES
+========================================== */
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--verde);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--verde-oscuro);
+    transform: translateY(-3px);
+}
+
+.hero .btn-primary {
+    background-color: var(--verde-claro);
+    color: var(--verde-oscuro);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: white;
+    color: var(--verde);
+}
+
+.btn-light {
+    background-color: var(--beige);
+    color: var(--verde);
+}
+
+.btn-light:hover {
+    background-color: white;
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   6. INTRODUCCIÓN
+========================================== */
+
+.introduccion {
+    text-align: center;
+    padding: 90px 10%;
+    background-color: var(--beige);
+}
+
+.section-label {
+    color: #84976F;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.introduccion h2 {
+    font-size: 36px;
+    margin: 15px 0 20px;
+}
+
+.introduccion p {
+    max-width: 800px;
+    margin: auto;
+    color: var(--gris);
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   7. PRODUCTOS
+========================================== */
+
+.productos {
+    padding: 90px 8%;
+    background-color: white;
+}
+
+.section-heading {
+    max-width: 1400px;
+    margin: 0 auto 45px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-heading h2 {
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.section-heading p {
+    max-width: 350px;
+    color: var(--gris);
+}
+
+.contenedor-tarjetas {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background-color: var(--beige);
+    border-radius: 13px;
+    overflow: hidden;
+    transition: 0.35s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.imagen-producto {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    background-color: #E8E9DF;
+}
+
+.imagen-producto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: 0.5s;
+}
+
+.tarjeta:hover .imagen-producto img {
+    transform: scale(1.06);
+}
+
+.etiqueta-producto {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--verde);
+    color: white;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.producto-info {
+    padding: 25px;
+}
+
+.categoria {
+    font-size: 11px;
+    color: #84976F;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.producto-info h3 {
+    font-size: 21px;
+    margin: 10px 0;
+}
+
+.producto-info p {
+    font-size: 14px;
+    color: var(--gris);
+    min-height: 70px;
+}
+
+.producto-pie {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.precio {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--verde);
+}
+
+.btn-producto {
+    background-color: var(--verde);
+    color: white;
+    padding: 9px 16px;
+    border-radius: 5px;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-producto:hover {
+    background-color: var(--verde-oscuro);
+}
+
+
+/* ==========================================
+   8. BENEFICIOS
+========================================== */
+
+.beneficios {
+    padding: 90px 8%;
+    background-color: var(--beige);
+}
+
+.beneficios-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.beneficios-intro h2 {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.beneficios-intro p {
+    color: var(--gris);
+}
+
+.beneficios-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.beneficio {
+    background-color: white;
+    padding: 40px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.beneficio:hover {
+    transform: translateY(-7px);
+}
+
+.beneficio-icono {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.beneficio h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.beneficio p {
+    color: var(--gris);
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   9. NOSOTROS
+========================================== */
+
+.nosotros {
+    padding: 100px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+    background-color: white;
+}
+
+.nosotros-imagen {
+    height: 480px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.nosotros-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nosotros-contenido h2 {
+    font-size: 38px;
+    line-height: 1.25;
+    margin: 15px 0 25px;
+}
+
+.nosotros-contenido p {
+    color: var(--gris);
+    margin-bottom: 18px;
+}
+
+.nosotros-contenido .btn {
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   10. CONSEJOS
+========================================== */
+
+.consejos {
+    background-color: var(--verde);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.consejos-contenido {
+    padding: 80px 12%;
+    color: white;
+}
+
+.consejos-contenido .section-label {
+    color: #C9D7B8;
+}
+
+.consejos-contenido h2 {
+    font-size: 36px;
+    line-height: 1.3;
+    margin: 18px 0;
+}
+
+.consejos-contenido p {
+    color: #E5EADF;
+    margin-bottom: 30px;
+}
+
+.consejos-imagen {
+    height: 420px;
+    overflow: hidden;
+}
+
+.consejos-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ==========================================
+   11. LLAMADO A LA ACCIÓN
+========================================== */
+
+.llamado {
+    padding: 90px 20px;
+    background-color: var(--verde-claro);
+    text-align: center;
+}
+
+.llamado h2 {
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.llamado p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: var(--verde-oscuro);
+}
+
+
+/* ==========================================
+   12. FOOTER
+========================================== */
+
+footer {
+    background-color: var(--verde-oscuro);
+    color: white;
+    padding: 65px 9% 25px;
+}
+
+.footer-contenido {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 30px;
+}
+
+.footer-marca p {
+    max-width: 300px;
+    margin-top: 15px;
+    color: #D5E3C9;
+}
+
+.footer-enlaces,
+.footer-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-enlaces h3,
+.footer-contacto h3 {
+    margin-bottom: 12px;
+    font-size: 19px;
+}
+
+.footer-enlaces a {
+    color: #D5E3C9;
+    transition: 0.3s;
+}
+
+.footer-enlaces a:hover {
+    color: white;
+}
+
+.footer-contacto p {
+    color: #D5E3C9;
+    font-size: 14px;
+}
+
+.footer-final {
+    max-width: 1300px;
+    margin: 50px auto 0;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #D5E3C9;
+    font-size: 13px;
+}
+
+.footer-final a {
+    color: white;
+}
+
+
+/* ==========================================
+   13. DISEÑO PARA TABLETS
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 18px 4%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .contenedor-tarjetas {
+        gap: 18px;
+    }
+
+    .nosotros {
+        gap: 35px;
+        padding: 75px 6%;
+    }
+
+}
+
+
+/* ==========================================
+   14. DISEÑO PARA CELULARES
+========================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 7%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .introduccion {
+        padding: 65px 7%;
+    }
+
+    .introduccion h2 {
+        font-size: 29px;
+    }
+
+    .section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+    .contenedor-tarjetas {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+    }
+
+    .nosotros-imagen {
+        height: 330px;
+    }
+
+    .nosotros-contenido h2 {
+        font-size: 31px;
+    }
+
+    .consejos {
+        grid-template-columns: 1fr;
+    }
+
+    .consejos-contenido {
+        padding: 65px 7%;
+    }
+
+    .consejos-contenido h2 {
+        font-size: 30px;
+    }
+
+    .consejos-imagen {
+        height: 300px;
+    }
+
+    .llamado {
+        padding: 65px 7%;
+    }
+
+    .llamado h2 {
+        font-size: 31px;
+    }
+
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+    }
+
+    .footer-marca p {
+        margin: 15px auto;
+    }
+
+    .footer-final {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
